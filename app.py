@@ -6,7 +6,7 @@ import os
 from PIL import Image
 
 file_id = "1JdGiSZ-AbZlHCGMSe1rxxHqF3r1Te3ou"
-url = 'https://drive.google.com/uc?id=' + file_id  # Use the correct URL format
+url = 'https://drive.google.com/uc?id=1JdGiSZ-AbZlHCGMSe1rxxHqF3r1Te3ou'
 model_path = "Potato_Trained.keras"
 
 # Download the model if it doesn't exist
