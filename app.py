@@ -9,17 +9,16 @@ file_id = "16K8jeWhcC6RWmliW4pbsnZAWeimJVW0e"
 url = 'https://drive.google.com/file/d/16K8jeWhcC6RWmliW4pbsnZAWeimJVW0e'
 model_path = "trained_potato_plant_disease_model.keras"
 
-# Download the model if it doesn't exist
 if not os.path.exists(model_path):
     st.warning("Downloading model from Google Drive...")
     gdown.download(url, model_path, quiet=False)
 
 def model_prediction(test_image):
     model = tf.keras.models.load_model(model_path)
-    image = Image.open(test_image).convert("RGB")  # Convert to RGB
+    image = Image.open(test_image).convert("RGB") 
     image = image.resize((128, 128))
-    input_arr = np.array(image) / 255.0  # Normalize
-    input_arr = np.expand_dims(input_arr, axis=0)  # Convert to batch
+    input_arr = np.array(image) / 255.0 
+    input_arr = np.expand_dims(input_arr, axis=0)  
     predictions = model.predict(input_arr)
     return np.argmax(predictions)
 
