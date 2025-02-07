@@ -4,17 +4,16 @@ import numpy as np
 import gdown
 import os
 from PIL import Image
-import io
 
 file_id = "1JdGiSZ-AbZlHCGMSe1rxxHqF3r1Te3ou"
-url ='https://drive.google.com/file/d/1JdGiSZ-AbZlHCGMSe1rxxHqF3r1Te3ou/view?usp=drive_link'
+url = 'https://drive.google.com/uc?id=' + file_id  # Use the correct URL format
 model_path = "Potato_Trained.keras"
 
+# Download the model if it doesn't exist
 if not os.path.exists(model_path):
     st.warning("Downloading model from Google Drive...")
     gdown.download(url, model_path, quiet=False)
 
-model_path = "Potato_Trained.keras"
 def model_prediction(test_image):
     model = tf.keras.models.load_model(model_path)
     image = Image.open(test_image).convert("RGB")  # Convert to RGB
@@ -45,8 +44,11 @@ elif app_mode == "DISEASE RECOGNITION":
         if test_image:
             st.snow()
             st.write("Our Prediction")
-            result_index = model_prediction(test_image)
-            class_name = ['Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy']
-            st.success(f"Model is Predicting it's a {class_name[result_index]}")
+            try:
+                result_index = model_prediction(test_image)
+                class_name = ['Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy']
+                st.success(f"Model is Predicting it's a {class_name[result_index]}")
+            except Exception as e:
+                st.error(f"Error during prediction: {e}")
         else:
             st.error("Please upload an image first.")
