@@ -3,8 +3,6 @@ import tensorflow as tf
 import numpy as np
 import gdown
 import os
-from PIL import Image
-import io
 
 file_id = "1JdGiSZ-AbZlHCGMSe1rxxHqF3r1Te3ou"
 url ='https://drive.google.com/file/d/1JdGiSZ-AbZlHCGMSe1rxxHqF3r1Te3ou'
