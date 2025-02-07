@@ -7,7 +7,7 @@ from PIL import Image
 
 file_id = "14IhweXtbyT_B3_gZJw6Q109wcRLbF332"
 url = 'https://drive.google.com/file/d/14IhweXtbyT_B3_gZJw6Q109wcRLbF332'
-model_path = "Potato_Trained.keras"
+model_path = "trained_potato.zip"
 
 # Download the model if it doesn't exist
 if not os.path.exists(model_path):
