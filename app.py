@@ -14,6 +14,7 @@ if not os.path.exists(model_path):
     st.warning("Downloading model from Google Drive...")
     gdown.download(url, model_path, quiet=False)
 
+model_path = "Potato_Trained.keras"
 def model_prediction(test_image):
     model = tf.keras.models.load_model(model_path)
     image = Image.open(test_image).convert("RGB")  # Convert to RGB
