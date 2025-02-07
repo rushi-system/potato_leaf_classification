@@ -6,15 +6,15 @@ import os
 from PIL import Image
 import io
 
-file_id = "14IhweXtbyT_B3_gZJw6Q109wcRLbF332"
-url ='https://drive.google.com/file/d/14IhweXtbyT_B3_gZJw6Q109wcRLbF332/view?usp=sharing'
-model_path = "trained_potato_plant_disease_model.keras"
+file_id = "1JdGiSZ-AbZlHCGMSe1rxxHqF3r1Te3ou"
+url ='https://drive.google.com/file/d/1JdGiSZ-AbZlHCGMSe1rxxHqF3r1Te3ou/view?usp=drive_link'
+model_path = "Potato_Trained.keras"
 
 if not os.path.exists(model_path):
     st.warning("Downloading model from Google Drive...")
     gdown.download(url, model_path, quiet=False)
 
-model_path = "trained_potato_plant_disease_model.keras"
+model_path = "Potato_Trained.keras"
 def model_prediction(test_image):
     model = tf.keras.models.load_model(model_path)
     image = Image.open(test_image).convert("RGB")  # Convert to RGB
