@@ -5,8 +5,8 @@ import gdown
 import os
 from PIL import Image
 
-file_id = "1JdGiSZ-AbZlHCGMSe1rxxHqF3r1Te3ou"
-url = 'https://drive.google.com/file/d/1JdGiSZ-AbZlHCGMSe1rxxHqF3r1Te3ou'
+file_id = "14IhweXtbyT_B3_gZJw6Q109wcRLbF332"
+url = 'https://drive.google.com/file/d/14IhweXtbyT_B3_gZJw6Q109wcRLbF332'
 model_path = "Potato_Trained.keras"
 
 # Download the model if it doesn't exist
